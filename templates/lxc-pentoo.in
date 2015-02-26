@@ -17,7 +17,9 @@ include Gentoo.lxc
 # Pentoo is just a Gentoo Flavoring however having LXC build it a plus for making a victum build/testing container. 
 USE="bazaar cvs darcs +git gpg g-sorcery mercurial squashfs subversion sync-plugin-portage test" Emerge layman
 #@ Build layman to add overlay of pentoo. 
+#echo ${Fetch the layman list of overlays.... } 
 layman -L
+#echo ${now adding Pentoo to your Gentoo LXC container & "Converting"} 
 Layman -a pentoo 
 ### Add Pentoo overlay to portage 
 
@@ -27,6 +29,8 @@ Layman -a pentoo
 ###
 ## numbers varry depending on Overlay  for sake of speed binary and then build new packages against.  
 ## Hardened or the defatco or one could set the symlink by force. one can change this latter. 
+# {some choice for arch} or hardened arch {hear} 
+# x86 much the same.... 
   # default/linux/uclibc/amd64
  ##   pentoo:pentoo/default/linux/amd64
   #  pentoo:pentoo/default/linux/amd64/binary
